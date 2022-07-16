@@ -67,3 +67,18 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Plugins
+-- Dap
+keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F10>", ":lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F11>", ":lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<C-b>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "∫", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts) -- <A-b>
+keymap("n", "π", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts) -- <A-p>
+keymap("n", "®", ":lua require'dap'.repl.open()<CR>", opts) -- <A-r>
+keymap("n", "¬", ":lua require'dap'.run_last()<CR>", opts) -- <A-l>
+-- Dap-python
+keymap("n", "µ", ":lua require('dap-python').test_method()<CR>", opts) -- <A-m>
+keymap("n", "ç", ":lua require('dap-python').test_class()<CR>", opts) -- <A-c>
+keymap("v", "ß", ":lua require('dap-python').debug_selection()<CR>", opts) -- <A-s>
