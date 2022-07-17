@@ -94,6 +94,7 @@ return packer.startup(function(use)
 
   -- Debug Adapter Protocol
   use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use 'mfussenegger/nvim-dap-python'
 
 	-- Automatically set up your configuration after cloning packer.nvim
